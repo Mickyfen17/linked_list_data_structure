@@ -112,11 +112,22 @@ class List {
   include(nodeKey) {
     let currentNode = this.head;
     while(currentNode.nextNode) {
-      if(currentNode.data === nodeKey) {
+      if(currentNode.data.includes(nodeKey)) {
         return true;
       }
       currentNode = currentNode.nextNode;
     }
     return false;
+  }
+
+  find(nodeKey) {
+    let currentNode = this.head;
+    while(currentNode.nextNode) {
+      if(currentNode.data.includes(nodeKey)) {
+        return currentNode;
+      }
+      currentNode = currentNode.nextNode;
+    }
+    return null;
   }
 }
