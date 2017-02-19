@@ -97,4 +97,15 @@ class List {
     array.push(currentNode.data);
     return array;
   }
+
+  lastNode() {
+    let currentNode = this.head;
+    if(!currentNode) {
+      return null;
+    }
+    while(currentNode.nextNode) {
+      currentNode = currentNode.nextNode;
+    }
+    return currentNode;
+  }
 }
