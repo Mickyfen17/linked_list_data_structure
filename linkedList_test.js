@@ -317,7 +317,7 @@ describe('LinkedList', function() {
       list.push("tomorrow")
     });
 
-    it.skip('should calculate distance between nodes', function(){
+    it('should calculate distance between nodes', function(){
       expect(list.distance("hello", "today")).to.eq(3);
       expect(list.distance("pizza", "today")).to.eq(2);
       expect(list.distance("hello", "world")).to.eq(2);
