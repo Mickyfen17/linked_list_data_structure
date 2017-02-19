@@ -159,4 +159,18 @@ class List {
       currentNode = currentNode.nextNode;
     }
   }
+
+  insertAfter(nodeKey, element) {
+    let currentNode = this.head;
+    while(currentNode) {
+      if(currentNode.data.includes(nodeKey)) {
+        const newNode = new ListNode(element);
+        newNode.nextNode = currentNode.nextNode;
+        currentNode.nextNode = newNode;
+        this._length++;
+        return currentNode;
+      }
+      currentNode = currentNode.nextNode;
+    }
+  }
 }
