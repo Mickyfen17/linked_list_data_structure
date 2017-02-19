@@ -143,4 +143,20 @@ class List {
     }
     return null;
   }
+
+  insert(index, element) {
+    let currentNode = this.head;
+    let count = 0;
+    while(currentNode) {
+      if(index-1 === count) {
+        const newNode = new ListNode(element);
+        newNode.nextNode = currentNode.nextNode;
+        currentNode.nextNode = newNode;
+        this._length++;
+        return currentNode;
+      }
+      count++;
+      currentNode = currentNode.nextNode;
+    }
+  }
 }
