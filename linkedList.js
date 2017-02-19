@@ -130,4 +130,17 @@ class List {
     }
     return null;
   }
+
+  index(nodeKey) {
+    let currentNode = this.head;
+    let count = 0;
+    while(currentNode) {
+      if(currentNode.data.includes(nodeKey)) {
+        return count;
+      }
+      count++;
+      currentNode = currentNode.nextNode;
+    }
+    return null;
+  }
 }
