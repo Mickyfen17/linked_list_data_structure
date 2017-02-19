@@ -44,4 +44,38 @@ class List {
     currentNode.nextNode = null;
     return removed;
   }
+
+  delete(nodeKey) {
+    const currentNode = this.head;
+    if(currentNode.data.includes(nodeKey) && !currentNode.nextNode) {
+      this.head = null;
+      this._length--;
+      return currentNode;
+    }
+    if(currentNode.data.includes(nodeKey) && currentNode.nextNode) {
+      this.head = currentNode.nextNode;
+      this._length--;
+      return currentNode;
+    }
+    this.deleteNestedNode(currentNode, nodeKey);
+  }
+
+  deleteNestedNode(currentNode, nodeKey) {
+    while(currentNode.nextNode && !currentNode.nextNode.data.includes(nodeKey)) {
+      currentNode = currentNode.nextNode;
+    }
+    if(!currentNode.nextNode) {
+      return currentNode;
+    }
+    if(!currentNode.nextNode.nextNode) {
+      currentNode.nextNode = null;
+      this._length--;
+      return currentNode;
+    }
+    if(currentNode.nextNode.data.includes(nodeKey)) {
+      const reasignNode = currentNode.nextNode.nextNode;
+      currentNode.nextNode = reasignNode;
+      this._length--;
+    }
+  }
 }
