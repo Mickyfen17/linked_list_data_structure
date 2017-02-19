@@ -284,7 +284,7 @@ describe('LinkedList', function() {
       list.push('stormy');
     });
 
-    it.skip('should insert nodes', function(){
+    it('should insert nodes', function(){
       expect(list._length).to.eq(2);
       list.insert(1, 'and');
       list.insert(3, 'night');
