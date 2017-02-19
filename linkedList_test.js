@@ -271,7 +271,7 @@ describe('LinkedList', function() {
       list.push('world');
     });
 
-    it.skip('should return expected indexes', function(){
+    it('should return expected indexes', function(){
       expect(list.index('oh')).to.eq(0);
       expect(list.index('world')).to.eq(2);
       expect(list.index('nope')).to.eq(null);
