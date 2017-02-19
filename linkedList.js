@@ -11,10 +11,10 @@ class List {
       this._length++;
       return newNode;
     }
-    this.findLastNode(currentNode, newNode);
+    this.appendLastNode(currentNode, newNode);
   }
 
-  findLastNode(currentNode, newNode) {
+  appendLastNode(currentNode, newNode) {
     while(currentNode.nextNode) {
       currentNode = currentNode.nextNode;
     }
@@ -24,7 +24,7 @@ class List {
   }
 
   pop() {
-    let currentNode = this.head;
+    const currentNode = this.head;
     if(!currentNode) {
       return null;
     }
@@ -33,6 +33,10 @@ class List {
       this.head = null;
       return currentNode;
     }
+    return this.popLastNode(currentNode);
+  }
+
+  popLastNode(currentNode) {
     while(currentNode.nextNode.nextNode) {
       currentNode = currentNode.nextNode;
     }
