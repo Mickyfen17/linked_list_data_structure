@@ -173,4 +173,18 @@ class List {
       currentNode = currentNode.nextNode;
     }
   }
+
+  distance(startNode, endNode) {
+    let currentNode = this.head;
+    let count;
+    while(currentNode) {
+      if(currentNode.data.includes(startNode)) {
+        count = 0;
+      } else if(currentNode.data.includes(endNode)) {
+        return count;
+      }
+      count++;
+      currentNode = currentNode.nextNode;
+    }
+  }
 }
