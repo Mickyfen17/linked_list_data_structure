@@ -206,7 +206,7 @@ describe('LinkedList', function() {
         list.push('Spain');
       });
 
-      it.skip('finds the last node', function(){
+      it('finds the last node', function(){
         expect(list.lastNode().data).to.eq('Spain');
       });
     });
@@ -216,13 +216,13 @@ describe('LinkedList', function() {
         list.push('Ahoy!');
       });
 
-      it.skip('finds the only node', function(){
+      it('finds the only node', function(){
         expect(list.lastNode().data).to.eq('Ahoy!');
       });
     });
 
     context('with no nodes', function(){
-      it.skip('returns null', function(){
+      it('returns null', function(){
         expect(list.lastNode()).to.eq(null);
       });
     });
