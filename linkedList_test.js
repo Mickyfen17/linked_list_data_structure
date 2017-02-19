@@ -299,9 +299,9 @@ describe('LinkedList', function() {
       list.push('stormy');
     });
 
-    it.skip('should insert nodes after other nodes', function(){
+    it('should insert nodes after other nodes', function(){
       expect(list._length).to.eq(2);
-      list.insertAgfter('dark', 'and');
+      list.insertAfter('dark', 'and');
       list.insertAfter('stormy', 'night');
       expect(list._length).to.eq(4);
       expect(list.toArray()).to.deep.equal(['dark', 'and', 'stormy', 'night']);
