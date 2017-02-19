@@ -4,14 +4,17 @@ class List {
     this.head = null;
   }
   push(element) {
-    // debugger
-    let newNode = new ListNode(element);
-    let currentNode = this.head;
+    const newNode = new ListNode(element);
+    const currentNode = this.head;
     if(!currentNode) {
       this.head = newNode;
       this._length++;
       return newNode;
     }
+    this.findLastNode(currentNode, newNode);
+  }
+
+  findLastNode(currentNode, newNode) {
     while(currentNode.nextNode) {
       currentNode = currentNode.nextNode;
     }
@@ -19,4 +22,5 @@ class List {
     this._length++;
     return newNode;
   }
+
 }
