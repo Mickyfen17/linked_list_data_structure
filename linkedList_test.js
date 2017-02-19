@@ -178,7 +178,7 @@ describe('LinkedList', function() {
 
   describe('.toArray', function(){
     context('when there are no elements', function(){
-      it.skip('converts to an array', function(){
+      it('converts to an array', function(){
         expect(list.toArray()).to.deep.equal([]);
       });
     });
@@ -191,7 +191,7 @@ describe('LinkedList', function() {
         list.push('Spain');
       });
 
-      it.skip('can convert to an array', function(){
+      it('can convert to an array', function(){
         expect(list.toArray()).to.deep.equal(['The', 'rain', 'in', 'Spain']);
       });
     });
