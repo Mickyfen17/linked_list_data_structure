@@ -23,4 +23,21 @@ class List {
     return newNode;
   }
 
+  pop() {
+    let currentNode = this.head;
+    if(!currentNode) {
+      return null;
+    }
+    this._length--;
+    if(!currentNode.nextNode) {
+      this.head = null;
+      return currentNode;
+    }
+    while(currentNode.nextNode.nextNode) {
+      currentNode = currentNode.nextNode;
+    }
+    const removed = currentNode.nextNode;
+    currentNode.nextNode = null;
+    return removed;
+  }
 }
