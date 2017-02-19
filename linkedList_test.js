@@ -252,13 +252,13 @@ describe('LinkedList', function() {
       list.push('world');
     });
 
-    it.skip('should return true the node if node in list', function(){
+    it('should return true the node if node in list', function(){
       var result = list.find("hello");
       expect(result.data).to.eq('hello');
       expect(result.nextNode.data).to.eq('world');
     });
 
-    it.skip('should return null if node is missing', function(){
+    it('should return null if node is missing', function(){
       var result = list.find("nope");
       expect(result).to.eq(null);
     });
