@@ -78,4 +78,23 @@ class List {
       this._length--;
     }
   }
+
+  toArray() {
+    let nodeArray = [];
+    const currentNode = this.head;
+    if(!currentNode) {
+      return nodeArray;
+    }
+    nodeArray = this.pushToArray(currentNode, nodeArray);
+    return nodeArray;
+  }
+
+  pushToArray(currentNode, array) {
+    while(currentNode.nextNode) {
+      array.push(currentNode.data);
+      currentNode = currentNode.nextNode;
+    }
+    array.push(currentNode.data);
+    return array;
+  }
 }
