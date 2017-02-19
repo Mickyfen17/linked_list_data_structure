@@ -108,4 +108,15 @@ class List {
     }
     return currentNode;
   }
+
+  include(nodeKey) {
+    let currentNode = this.head;
+    while(currentNode.nextNode) {
+      if(currentNode.data === nodeKey) {
+        return true;
+      }
+      currentNode = currentNode.nextNode;
+    }
+    return false;
+  }
 }
